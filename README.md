@@ -1,4 +1,4 @@
-# Local Development Environment Setup with LocalStack Pro
+# Local Development Environment Setup with LocalStack
 
 This project aims to create a local development environment that simulates AWS services using LocalStack. 
 The setup includes:
@@ -16,7 +16,7 @@ The setup includes:
 ## Project Components
 
 ### 1. EKS Cluster
-- Simulated Kubernetes cluster managed by LocalStack Pro.
+- Simulated Kubernetes cluster managed by LocalStack.
 - Supports essential Kubernetes features including creating and managing clusters and node groups.
 
 ### 2. LocalStack ECR
@@ -50,15 +50,44 @@ The setup includes:
 
 1. **Clone the repository**:
     ```bash
-    git clone <repository-url>
-    cd ~/dev-env
+    git@github.com:sam-caldwell/dev-env-node.git
+    cd ~/git/dev-env-node
     ```
 
 2. **Set up LocalStack**:
-   Ensure LocalStack Pro is installed and running.
+   Ensure LocalStack is installed and running.  See [Setting Up LocalStack](./docs/setup-localstack.md)
 
 3. **Deploy the infrastructure**:
-   Use Terraform and Terragrunt to apply the configuration files.
+To deploy the infrastructure defined in your Terraform configurations, follow these steps:
+   1. **Navigate to the Terragrunt configuration directory**:
+      Assuming you have organized your Terragrunt configurations in a subdirectory structure, navigate to the 
+      appropriate directory where your `terragrunt.hcl` file is located. For example:
+      ```bash
+      cd ~/git/dev-env-node/iac
+      ```
+   2. **Initialize Terragrunt:** 
+      Run the following command to initialize your Terragrunt configuration, which sets up the necessary backend 
+      configuration and downloads the required Terraform modules.
+      ```bash
+      terragrunt init
+      ```
+   3. **Run the Terragrunt plan:**
+      This step allows you to preview the changes that will be made to your infrastructure before applying them. 
+      It provides a summary of the resources that will be created, updated, or destroyed.
+      ```bash
+      terragrunt plan
+      ```
+   4. **Apply the configuration:** 
+      After reviewing the plan and confirming that everything looks correct, you can apply the configuration to deploy
+      the infrastructure. This command will create the specified resources in your LocalStack EKS cluster.
+      ```bash
+      terragrunt apply
+      ```
+   5. **Verify the deployment:**
+      Use the `aws` cli tool to verify the infrastructure expected.  For example:
+      ```shell
+      aws eks list-clusters --profile localstack
+      ```
 
 4. **Access the services**:
    Access the web API, Prometheus, and Grafana through the configured endpoints.
@@ -67,6 +96,6 @@ The setup includes:
 This project is licensed under the MIT License. See the LICENSE file for more details.
 
 ## Acknowledgments
-- [LocalStack Documentation](https://docs.localstack.cloud/user-guide/aws/eks/)
+- [LocalStack Documentation](https://docs.localstack.cloud/user-guide/)
 - [Terraform Documentation](https://www.terraform.io/docs)
 # dev-env-node

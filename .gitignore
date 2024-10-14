@@ -1,0 +1,8 @@
+.idea/
+venv/
+tmp/
+*.log
+*.tmp
+iac/.terraform/
+.terraform.lock.*
+.env
