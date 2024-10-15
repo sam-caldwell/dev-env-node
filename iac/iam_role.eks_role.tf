@@ -1,4 +1,4 @@
-# iac/aws_iam_role.eks_role.tf
+# iac/iam_role.eks_role.tf
 
 resource "aws_iam_role" "eks_role" {
   name = "localstack-eks-role"

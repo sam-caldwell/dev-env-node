@@ -1,7 +1,7 @@
-# iac/ecr/aws_ecr_repository.tf
+# iac/ecr/ecr_repository.tf
 
 resource "aws_ecr_repository" "this" {
-  name                 = "repo"
+  name                 = var.repository_name
   image_tag_mutability = "MUTABLE"
 
   lifecycle {

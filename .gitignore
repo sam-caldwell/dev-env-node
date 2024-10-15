@@ -4,5 +4,6 @@ tmp/
 *.log
 *.tmp
 iac/.terraform/
-.terraform.lock.*
+.terraform.*
+terraform.tfstate
 .env
