@@ -1,7 +1,7 @@
 # iac/route53_record_api.tf
-#
+
 # resource "aws_route53_record" "api" {
-#   zone_id = aws_route53_zone.this.zone_id
+#   zone_id = aws_route53_zone.localstack_dev.zone_id
 #   name     = "api.${var.domain_name}"
 #   type     = "A"
 #   alias {

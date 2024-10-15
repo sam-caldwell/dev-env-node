@@ -7,7 +7,3 @@ locals {
 
   grafana_fqdn = "grafana.${var.domain_name}"
 }
-
-locals {
-
-}
