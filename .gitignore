@@ -4,8 +4,8 @@ tmp/
 *.log
 *.tmp
 iac/.terraform/
-iac/terraform.tfstate
-iac/terraform.tfstate.backup
+terraform.tfstate
+terraform.tfstate.backup
 .terraform.*
 *.backup
 .env
