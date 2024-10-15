@@ -4,6 +4,10 @@ tmp/
 *.log
 *.tmp
 iac/.terraform/
+iac/terraform.tfstate
+iac/terraform.tfstate.backup
 .terraform.*
 terraform.tfstate
+*.backup
 .env
+kubeconfig

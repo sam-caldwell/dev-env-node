@@ -55,47 +55,17 @@ The setup includes:
     ```
 
 2. **Set up LocalStack**:
+
    Ensure LocalStack is installed and running.  See [Setting Up LocalStack](./docs/setup-localstack.md)
 
 3. **Deploy the infrastructure**:
-To deploy the infrastructure defined in your Terraform configurations, follow these steps:
-   1. **Navigate to the Terragrunt configuration directory**:
-      Assuming you have organized your Terragrunt configurations in a subdirectory structure, navigate to the 
-      appropriate directory where your `terragrunt.hcl` file is located. For example:
-      ```bash
-      cd ~/git/dev-env-node/iac
-      ```
-   2. **Initialize Terragrunt:** 
-      Run the following command to initialize your Terragrunt configuration, which sets up the necessary backend 
-      configuration and downloads the required Terraform modules.
-      ```bash
-      terragrunt init
-      ```
-   3. **Run the Terragrunt plan:**
-      This step allows you to preview the changes that will be made to your infrastructure before applying them. 
-      It provides a summary of the resources that will be created, updated, or destroyed.
-      ```bash
-      terragrunt plan
-      ```
-   4. **Apply the configuration:** 
-      After reviewing the plan and confirming that everything looks correct, you can apply the configuration to deploy
-      the infrastructure. This command will create the specified resources in your LocalStack EKS cluster.
-      ```bash
-      terragrunt apply
-      ```
-   5. **Verify the deployment:**
-      Use the `aws` cli tool to verify the infrastructure expected.  For example:
-      ```shell
-      aws eks list-clusters --profile localstack
-      ```
+
+   To deploy the infrastructure defined in your Terraform configurations.  
+   See [Deploy Local Infrastructure](./docs/deploy-localstack-terraform.md).
 
 4. **Access the services**:
    Access the web API, Prometheus, and Grafana through the configured endpoints.
 
-## License
-This project is licensed under the MIT License. See the LICENSE file for more details.
-
 ## Acknowledgments
 - [LocalStack Documentation](https://docs.localstack.cloud/user-guide/)
 - [Terraform Documentation](https://www.terraform.io/docs)
-# dev-env-node
