@@ -2,5 +2,5 @@
 
 provider "aws" {
   region  = var.region
-  profile = "localstack"
+  profile = var.aws_profile
 }

@@ -29,12 +29,12 @@ users:
         - "--cluster-name"
         - "${aws_eks_cluster.this.name}"
         - "--profile"
-        - "localstack"
+        - ${var.aws_profile}
         - "--region"
-        - "us-east-1"  # Specify your region
+        - ${var.region}
       env:
         - name: "AWS_REGION"
-          value: "us-east-1"  # Match the region used by LocalStack
+          value: ${var.region}
 EOF
 }
 

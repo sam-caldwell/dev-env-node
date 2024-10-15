@@ -1,5 +1,12 @@
 # iac/acm/variables.tf
 
+variable "aws_profile"{
+  description = "defines the aws profile to use (e.g. localstack)"
+  type = string
+  default = "localstack"
+}
+
+
 variable "domain_name" {
   description = "The fully qualified domain name for the ACM certificate."
   type        = string
