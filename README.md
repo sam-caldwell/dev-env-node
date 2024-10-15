@@ -9,7 +9,7 @@ The setup includes:
 - **Monitoring and Logging**: Prometheus and Grafana for monitoring application metrics and logs.
 - **Data Store**: A 3-replica Redis cluster for caching and data storage.
 - **Web API**: A 3-replica Node.js web API that interacts with Redis and exposes metrics for Prometheus.
-- **Infrastructure as Code**: Configuration and management using Terraform and Terragrunt.
+- **Infrastructure as Code**: Configuration and management using Terraform.
 - **Local State Management**: Terraform state stored in a local `./tfstate` directory to eliminate the need for 
   remote state management.
 
@@ -40,7 +40,6 @@ The setup includes:
 
 ### 7. Infrastructure Management
 - **Terraform**: Used to define and provision the infrastructure.
-- **Terragrunt**: Enhances Terraform configurations and manages dependencies.
 
 ### 8. State Management
 - Terraform state files will be stored locally in the `./tfstate` directory, facilitating easier management without 
