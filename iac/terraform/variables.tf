@@ -1,16 +1,44 @@
 # iac/acm/variables.tf
 
-variable "aws_profile"{
-  description = "defines the aws profile to use (e.g. localstack)"
-  type = string
-  default = "localstack"
+variable "email" {
+  description = "email address for verification with letsencrypt"
+  type        = string
+  default     = "noop@example.com"
+  validation {
+    condition = can(regex("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$", var.email))
+    error_message = "The email address must be in a valid format (e.g., user@example.com)."
+  }
 }
 
+variable "app_namespace" {
+  description = "app namespace"
+  type        = string
+  default     = "application"
+}
+
+variable "cert_manager_namespace" {
+  description = "cert-manager namespace"
+  type        = string
+  default     = "cert-manager"
+}
+
+variable "prometheus_namespace" {
+  description = "prometheus namespace"
+  type        = string
+  default     = "prometheus"
+}
+
+
+variable "aws_profile" {
+  description = "defines the aws profile to use (e.g. localstack)"
+  type        = string
+  default     = "localstack"
+}
 
 variable "domain_name" {
   description = "The fully qualified domain name for the ACM certificate."
   type        = string
-  default     = "localstack.dev"
+  default     = "localhost.localstack.cloud"
 }
 
 variable "region" {
@@ -50,6 +78,6 @@ variable "repository_name" {
 
 variable "nginx_ingress_replicas" {
   description = "number of nginx ingress replicas"
-  type = number
-  default = 3
+  type        = number
+  default     = 3
 }

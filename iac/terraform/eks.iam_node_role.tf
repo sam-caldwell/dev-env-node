@@ -1,5 +1,4 @@
 
-# Define the IAM Role for EKS Nodes
 resource "aws_iam_role" "eks_node_role" {
   name = "localstack-eks-node-role"
 

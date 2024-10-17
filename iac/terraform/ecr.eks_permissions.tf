@@ -1,4 +1,5 @@
 # iac/ecr.eks_permissions.tf
+
 # resource "aws_iam_policy" "eks_permissions" {
 #   name        = "EKS_ECR_Access"
 #   description = "Policy to allow EKS cluster to push and pull images from ECR."
@@ -23,6 +24,10 @@
 #       }
 #     ]
 #   })
+#   depends_on = [
+#     aws_eks_cluster.this,
+#     aws_ecr_repository.this,
+#   ]
 # }
 #
 # resource "aws_iam_role_policy_attachment" "attach_eks_ecr_policy" {

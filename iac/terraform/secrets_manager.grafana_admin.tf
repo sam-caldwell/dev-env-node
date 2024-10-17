@@ -1,12 +1,12 @@
 # iac/secrets_manager.grafana_admin.tf
 
 resource "aws_secretsmanager_secret" "grafana_admin" {
-  name        = local.grafana_name
+  name        = local.service.grafana.name
   description = "Grafana admin user"
 
   tags = {
-    Environment = "localstack"
-    Application = local.grafana_name
+    Environment = var.aws_profile
+    Application = local.service.grafana.name
   }
 }
 
