@@ -3,7 +3,7 @@ venv/
 tmp/
 *.log
 *.tmp
-iac/.terraform/
+.terraform/
 terraform.tfstate
 terraform.tfstate.backup
 .terraform.*

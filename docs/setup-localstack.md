@@ -54,7 +54,7 @@ export LOCALSTACK_AUTH_TOKEN='your-localstack-api-key'
 
 Start localstack with the following command:
 ```bash
-localstack start -d
+localstack start --host-dns -d
 ```
 You should see logs indicating that LocalStack services are running.
 > Note:

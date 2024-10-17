@@ -26,8 +26,9 @@ Deploy Localstack Infrastructure
    After reviewing the plan and confirming that everything looks correct, you can apply the configuration to deploy
    the infrastructure. This command will create the specified resources in your LocalStack EKS cluster.
    ```bash
-   terraform apply
+   terraform apply -var='email=dev-env-node@samcaldwell.net'
    ```
+   <span style="color:red"> Be sure to use your email address.</span>
 
 ## Verify the deployment
    Use the `aws` cli tool to verify the infrastructure expected.  For example:
